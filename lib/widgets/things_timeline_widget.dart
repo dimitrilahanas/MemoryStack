@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:memorystack/widgets/thing_tile.dart';
 
 class ThingsTimelineWidget extends StatelessWidget {
   const ThingsTimelineWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.sizeOf(context).width;
+
     return Column(
       children: [
         Align(
@@ -22,6 +25,19 @@ class ThingsTimelineWidget extends StatelessWidget {
             ),
           ),
         ),
+
+        Padding(
+          padding: const EdgeInsets.only(top: 20),
+          child: SizedBox(
+            width: screenWidth,
+            height: 300,
+            child: ListView(
+              children: [
+                ThingTile(),
+              ],
+            ),
+          ),
+        )
       ],
     );
   }
