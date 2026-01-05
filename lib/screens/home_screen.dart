@@ -10,17 +10,23 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.secondary,
         title: Text(
-          'User Name',
+          'Dashboard',
           style: TextStyle(
             color: Theme.of(context).colorScheme.primary,
-            fontWeight: FontWeight.bold,
+            fontSize: 15,
           ),
         ),
       ),
 
       body: Column(
         children: [
-          HeaderWidget()
+          HeaderWidget(),
+
+          ListView(
+            children: [
+
+            ],
+          ),
         ],
       ),
     );
