@@ -10,9 +10,7 @@ class HeaderWidget extends StatelessWidget {
     return Container(
       height: 250,
       width: screenWidth,
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.secondary,
-      ),
+      decoration: BoxDecoration(color: Theme.of(context).colorScheme.secondary),
 
       child: Align(
         alignment: Alignment.topLeft,
@@ -22,12 +20,12 @@ class HeaderWidget extends StatelessWidget {
             "Don't Forget These",
             style: TextStyle(
               color: Theme.of(context).colorScheme.primary,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w600,
               fontSize: 28,
               letterSpacing: -0.8,
-            )
+            ),
           ),
-        )
+        ),
       ),
     );
   }
