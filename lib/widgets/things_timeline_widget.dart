@@ -10,7 +10,7 @@ class ThingsTimelineWidget extends StatelessWidget {
         Align(
           alignment: Alignment.topLeft,
           child: Padding(
-            padding: const EdgeInsets.only(left: 35, top: 30),
+            padding: const EdgeInsets.only(left: 35, top: 40),
             child: Text(
               'Memory Log',
               style: TextStyle(
