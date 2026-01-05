@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memorystack/widgets/header_widget.dart';
+import 'package:memorystack/widgets/things_timeline_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -22,11 +23,7 @@ class HomeScreen extends StatelessWidget {
         children: [
           HeaderWidget(),
 
-          ListView(
-            children: [
-
-            ],
-          ),
+          ThingsTimelineWidget(),
         ],
       ),
     );
