@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:memorystack/widgets/header_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,6 +8,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.secondary,
         title: Text(
           'User Name',
           style: TextStyle(
@@ -14,6 +16,12 @@ class HomeScreen extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
+      ),
+
+      body: Column(
+        children: [
+          HeaderWidget()
+        ],
       ),
     );
   }
