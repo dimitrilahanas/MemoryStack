@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memorystack/screens/home_screen.dart';
-import 'package:memorystack/util/default_theme.dart';
+import 'package:memorystack/utils/default_theme.dart';
 
 void main() {
   runApp(const MyApp());
