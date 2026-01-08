@@ -27,13 +27,18 @@ class ThingsTimelineWidget extends StatelessWidget {
         ),
 
         Padding(
-          padding: const EdgeInsets.only(top: 20),
+          padding: const EdgeInsets.only(top: 5),
           child: SizedBox(
             width: screenWidth,
-            height: 300,
+            height: 400,
             child: ListView(
+              padding: EdgeInsets.only(left: 35),
               children: [
-                ThingTile(),
+                ThingTile(isFirstTile: true, isLastTile: false),
+                ThingTile(isFirstTile: false, isLastTile: false),
+                ThingTile(isFirstTile: false, isLastTile: false),
+                ThingTile(isFirstTile: false, isLastTile: false),
+                ThingTile(isFirstTile: false, isLastTile: true),
               ],
             ),
           ),
