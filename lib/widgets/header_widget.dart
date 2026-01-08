@@ -15,7 +15,7 @@ class HeaderWidget extends StatelessWidget {
       child: Align(
         alignment: Alignment.topLeft,
         child: Padding(
-          padding: const EdgeInsets.only(left: 35, top: 0),
+          padding: const EdgeInsets.only(left: 50, top: 0),
           child: Text(
             "Don't Forget These",
             style: TextStyle(

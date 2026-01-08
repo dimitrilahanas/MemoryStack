@@ -13,7 +13,7 @@ class ThingsTimelineWidget extends StatelessWidget {
         Align(
           alignment: Alignment.topLeft,
           child: Padding(
-            padding: const EdgeInsets.only(left: 35, top: 40),
+            padding: const EdgeInsets.only(left: 50, top: 40),
             child: Text(
               'Memory Log',
               style: TextStyle(
@@ -32,7 +32,7 @@ class ThingsTimelineWidget extends StatelessWidget {
             width: screenWidth,
             height: 400,
             child: ListView(
-              padding: EdgeInsets.only(left: 35),
+              padding: EdgeInsets.only(left: 50),
               children: [
                 ThingTile(isFirstTile: true, isLastTile: false),
                 ThingTile(isFirstTile: false, isLastTile: false),
