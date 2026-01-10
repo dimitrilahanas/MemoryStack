@@ -25,7 +25,7 @@ class ThingTile extends StatelessWidget {
         ),
         
         endChild: ThingCard(),
-      ),
+        ),
     );
   }
 }

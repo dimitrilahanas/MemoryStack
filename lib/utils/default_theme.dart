@@ -19,7 +19,7 @@ class DefaultTheme {
     colorScheme: ColorScheme(
       brightness: Brightness.dark,
       primary: Color(0xFFf0f0f0),
-      onPrimary: Color(0xFF1f1f1f),
+      onPrimary: Color.fromARGB(255, 213, 213, 213),
       secondary: Color(0xFF1a1a1a),
       onSecondary: Color(0xFF1f1f1f),
       error: Colors.red,
