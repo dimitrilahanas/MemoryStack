@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:memorystack/database/boxes.dart';
+import 'package:memorystack/models/memory.dart';
 import 'package:memorystack/screens/home_screen.dart';
 import 'package:memorystack/utils/default_theme.dart';
 
-import 'package:memorystack/models/thing.dart';
-
-void main() {
+void main() async {
+  await Hive.initFlutter;
+  Hive.registerAdapter(MemoryAdapter());
+  boxMemorys = await Hive.openBox<Memory>('memoryBox');
   runApp(const MyApp());
 }
 
