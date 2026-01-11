@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:memorystack/database/boxes.dart';
 import 'package:memorystack/widgets/thing_tile.dart';
 
 class ThingsTimelineWidget extends StatelessWidget {
@@ -29,15 +31,23 @@ class ThingsTimelineWidget extends StatelessWidget {
         SizedBox(
           width: screenWidth,
           height: 420,
-          child: ListView(
-            padding: EdgeInsets.only(left: 50),
-            children: [
-              ThingTile(isFirstTile: true, isLastTile: false),
-              ThingTile(isFirstTile: false, isLastTile: false),
-              ThingTile(isFirstTile: false, isLastTile: false),
-              ThingTile(isFirstTile: false, isLastTile: false),
-              ThingTile(isFirstTile: false, isLastTile: true),
-            ],
+          child: ValueListenableBuilder(
+            valueListenable: boxMemorys.listenable(),
+            builder: (context, box, _) {
+              return ListView.builder(
+                padding: const EdgeInsets.only(left: 50),
+                itemCount: boxMemorys.length,
+                itemBuilder: (context, index) {
+                  final memory = boxMemorys.getAt(index)!;
+
+                  return ThingTile(
+                    memory: memory,
+                    isFirstTile: index == 0,
+                    isLastTile: index == boxMemorys.length - 1,
+                  );
+                },
+              );
+            },
           ),
         ),
       ],

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ThingCard extends StatelessWidget {
-  const ThingCard({super.key});
+  final String memoryName;
+  final String memoryDesc;
+  final String memoryDate;
+
+  const ThingCard({super.key, required this.memoryName, required this.memoryDesc, required this.memoryDate});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +26,7 @@ class ThingCard extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 10, top: 10),
                     child: Text(
-                      "Thing Name",
+                      memoryName,
                       style: TextStyle(
                         color: Theme.of(context).colorScheme.primary,
                         fontWeight: FontWeight.w500,
@@ -37,7 +41,7 @@ class ThingCard extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 110, top: 10),
                     child: Text(
-                      "20/02/2026",
+                      memoryDate,
                       style: TextStyle(
                         color: Theme.of(context).colorScheme.onPrimary,
                         fontSize: 8,
@@ -53,7 +57,7 @@ class ThingCard extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(left: 11, right: 11),
                 child: Text(
-                  "Thing Description dasfsdf df sdfsfs fdsfs fsfsfds dsf dsfsd",
+                  memoryDesc,
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.primary,
                     fontSize: 10,

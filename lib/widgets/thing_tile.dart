@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:memorystack/models/memory.dart';
 import 'package:memorystack/widgets/thing_card.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
 class ThingTile extends StatelessWidget {
   final bool isFirstTile;
   final bool isLastTile;
+  final Memory memory;
 
-  const ThingTile({super.key, required this.isFirstTile, required this.isLastTile});
+  const ThingTile({super.key, required this.isFirstTile, required this.isLastTile, required this.memory});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class ThingTile extends StatelessWidget {
           color: Color(0xFF2DD4BF),
         ),
         
-        endChild: ThingCard(),
+        endChild: ThingCard(memoryName: memory.name, memoryDesc: memory.description, memoryDate: memory.lastCompleted),
         ),
     );
   }
