@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 
 class CreateMemoryWidget extends StatelessWidget {
   final VoidCallback savePressed;
-  final TextEditingController nameController;
-  final TextEditingController descController;
 
-  const CreateMemoryWidget({super.key, required this.savePressed, required this.nameController, required this.descController});
+  const CreateMemoryWidget({super.key, required this.savePressed});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +27,7 @@ class CreateMemoryWidget extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 30, right: 30, top: 15),
             child: TextField(
-              controller: nameController,
+              controller: null,
               style: TextStyle(color: Theme.of(context).colorScheme.primary),
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
@@ -63,8 +61,8 @@ class CreateMemoryWidget extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 30, right: 30, top: 30),
             child: TextField(
-              controller: descController,
               maxLines: 4,
+              controller: null,
               style: TextStyle(color: Theme.of(context).colorScheme.primary),
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
