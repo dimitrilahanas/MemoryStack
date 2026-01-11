@@ -25,6 +25,11 @@ class HomeScreen extends StatelessWidget {
           ThingsTimelineWidget(),
         ],
       ),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: null,
+        child: Icon(Icons.add, color: Theme.of(context).colorScheme.secondary, size: 30),
+      ),
     );
   }
 }
