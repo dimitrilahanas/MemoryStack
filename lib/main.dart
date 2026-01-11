@@ -6,7 +6,8 @@ import 'package:memorystack/screens/home_screen.dart';
 import 'package:memorystack/utils/default_theme.dart';
 
 void main() async {
-  await Hive.initFlutter;
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
   Hive.registerAdapter(MemoryAdapter());
   boxMemorys = await Hive.openBox<Memory>('memoryBox');
   runApp(const MyApp());

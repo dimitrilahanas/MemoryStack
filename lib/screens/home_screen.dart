@@ -22,7 +22,6 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         children: [
           HeaderWidget(),
-
           ThingsTimelineWidget(),
         ],
       ),
