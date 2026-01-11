@@ -37,7 +37,7 @@ class ThingCard extends StatelessWidget {
                 Align(
               alignment: Alignment.topRight,
               child: Padding(
-                padding: const EdgeInsets.only(left: 110),
+                padding: const EdgeInsets.only(left: 110, top: 10),
                 child: Text(
                   "20/02/2026",
                   style: TextStyle(
@@ -54,7 +54,7 @@ class ThingCard extends StatelessWidget {
             Align(
               alignment: Alignment.centerLeft,
               child: Padding(
-                padding: const EdgeInsets.only(left: 11),
+                padding: const EdgeInsets.only(left: 11, right: 11),
                 child: Text(
                   "Thing Description dasfsdf df sdfsfs fdsfs fsfsfds dsf dsfsd",
                   style: TextStyle(
@@ -65,7 +65,7 @@ class ThingCard extends StatelessWidget {
                 ),
               ),
             ),
-
+          
           ],
         ),
       ),
