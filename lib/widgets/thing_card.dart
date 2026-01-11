@@ -15,39 +15,36 @@ class ThingCard extends StatelessWidget {
 
         child: Column(
           children: [
-
             Row(
               children: [
-
                 Align(
                   alignment: Alignment.topLeft,
                   child: Padding(
                     padding: const EdgeInsets.only(left: 10, top: 10),
                     child: Text(
-                      "Thing Name", 
+                      "Thing Name",
                       style: TextStyle(
                         color: Theme.of(context).colorScheme.primary,
                         fontWeight: FontWeight.w500,
                         letterSpacing: 0,
-                      )
+                      ),
                     ),
                   ),
                 ),
 
                 Align(
-              alignment: Alignment.topRight,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 110, top: 10),
-                child: Text(
-                  "20/02/2026",
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.onPrimary,
-                    fontSize: 8,
+                  alignment: Alignment.topRight,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 110, top: 10),
+                    child: Text(
+                      "20/02/2026",
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.onPrimary,
+                        fontSize: 8,
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ),
-
               ],
             ),
 
@@ -65,7 +62,6 @@ class ThingCard extends StatelessWidget {
                 ),
               ),
             ),
-          
           ],
         ),
       ),
