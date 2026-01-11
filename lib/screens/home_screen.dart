@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:memorystack/widgets/create_memory_widget.dart';
 import 'package:memorystack/widgets/header_widget.dart';
 import 'package:memorystack/widgets/things_timeline_widget.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final TextEditingController memoryNameController = TextEditingController();
+  final TextEditingController memoryDescController = TextEditingController();
+  
+  HomeScreen({super.key});
+
+  void saveMemory() {
+    
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +35,25 @@ class HomeScreen extends StatelessWidget {
       ),
 
       floatingActionButton: FloatingActionButton(
-        onPressed: null,
-        child: Icon(Icons.add, color: Theme.of(context).colorScheme.secondary, size: 30),
+                onPressed: () {
+          showDialog(
+            context: context,
+            builder: (context) {
+              return CreateMemoryWidget(
+                savePressed: () {
+                  saveMemory();
+                },
+                nameController: memoryNameController,
+                descController: memoryDescController,
+              );
+            },
+          );
+        },
+        child: Icon(
+          Icons.add,
+          color: Theme.of(context).colorScheme.secondary,
+          size: 30,
+        ),
       ),
     );
   }
