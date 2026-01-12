@@ -16,7 +16,6 @@ class _HomeScreenState extends State<HomeScreen> {
   final TextEditingController memoryNameController = TextEditingController();
   final TextEditingController memoryDescController = TextEditingController();
 
-  // We'll use this to trigger the timeline refresh
   Key timelineKey = UniqueKey();
 
   void saveMemory() async {
@@ -30,13 +29,11 @@ class _HomeScreenState extends State<HomeScreen> {
       memoryDescController.text,
     );
 
-    // Clear text fields
     memoryNameController.clear();
     memoryDescController.clear();
 
     Navigator.pop(context);
 
-    // Trigger rebuild of ThingsTimelineWidget
     setState(() {
       timelineKey = UniqueKey();
     });
@@ -53,6 +50,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
+        scrolledUnderElevation: 0.0,
         backgroundColor: Theme.of(context).colorScheme.secondary,
         title: Text(
           'Dashboard',
