@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:memorystack/models/memory.dart';
+import 'package:memorystack/services/database_service.dart';
 import 'package:memorystack/widgets/thing_tile.dart';
 
 class ThingsTimelineWidget extends StatelessWidget {
@@ -6,7 +8,7 @@ class ThingsTimelineWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.sizeOf(context).width;
+    final DatabaseService _databaseService = DatabaseService.instance;
 
     return Column(
       children: [
@@ -26,18 +28,24 @@ class ThingsTimelineWidget extends StatelessWidget {
           ),
         ),
 
-        SizedBox(
-          width: screenWidth,
-          height: 420,
-          child: ListView(
-            padding: EdgeInsets.only(left: 50),
-            children: [
-              ThingTile(isFirstTile: true, isLastTile: false),
-              ThingTile(isFirstTile: false, isLastTile: false),
-              ThingTile(isFirstTile: false, isLastTile: false),
-              ThingTile(isFirstTile: false, isLastTile: false),
-              ThingTile(isFirstTile: false, isLastTile: true),
-            ],
+        Padding(
+          padding: EdgeInsetsGeometry.only(left: 50),
+          child: SizedBox(
+            height: 400,
+            child: FutureBuilder(
+              future: _databaseService.getMemorys(),
+              builder: (context, snapshot) {
+                final memories = snapshot.data ?? [];
+                return ListView.builder(
+                  itemCount: memories.length,
+                  itemBuilder:(context, index) {
+                    Memory memory = snapshot.data![index];
+                    return ThingTile(
+                      isFirstTile: index == 0, isLastTile: index == memories.length - 1, memory: memory,);
+                  },
+                );
+              },
+            ),
           ),
         ),
       ],

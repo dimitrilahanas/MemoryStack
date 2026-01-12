@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:memorystack/models/memory.dart';
 
 class ThingCard extends StatelessWidget {
-  const ThingCard({super.key});
+  final Memory memory;
+  const ThingCard({super.key, required this.memory});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class ThingCard extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 10, top: 10),
                     child: Text(
-                      "Thing Name",
+                      memory.name,
                       style: TextStyle(
                         color: Theme.of(context).colorScheme.primary,
                         fontWeight: FontWeight.w500,
@@ -53,7 +55,7 @@ class ThingCard extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(left: 11, right: 11),
                 child: Text(
-                  "Thing Description dasfsdf df sdfsfs fdsfs fsfsfds dsf dsfsd",
+                  memory.description,
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.primary,
                     fontSize: 10,
