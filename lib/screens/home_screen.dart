@@ -83,6 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
             },
           );
         },
+        backgroundColor: Theme.of(context).colorScheme.error,
         child: Icon(
           Icons.add,
           color: Theme.of(context).colorScheme.secondary,

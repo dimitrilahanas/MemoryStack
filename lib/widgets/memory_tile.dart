@@ -19,14 +19,14 @@ class MemoryTile extends StatelessWidget {
         isLast: isLastTile,
       
         beforeLineStyle: LineStyle(
-          color: Color(0xFF2DD4BF),
+          color: Theme.of(context).colorScheme.error,
         ),
       
         indicatorStyle: IndicatorStyle(
-          color: Color(0xFF2DD4BF),
+          color: Theme.of(context).colorScheme.error,
         ),
         
-        endChild: MemoryCard(memory: memory,),
+        endChild: MemoryCard(memory: memory),
         ),
     );
   }
