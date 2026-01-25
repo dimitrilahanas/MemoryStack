@@ -51,7 +51,7 @@ class CreateMemoryWidget extends StatelessWidget {
               'Add to Memory Log',
               style: TextStyle(
                 color: Theme.of(context).colorScheme.primary,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w600,
                 letterSpacing: 0,
                 fontSize: 25,
               ),
@@ -88,9 +88,7 @@ class CreateMemoryWidget extends StatelessWidget {
             child: TextButton(
               onPressed: savePressed,
               style: TextButton.styleFrom(
-                backgroundColor: Theme.of(
-                  context,
-                ).colorScheme.primary.withAlpha(20),
+                backgroundColor: Theme.of(context).colorScheme.primary.withAlpha(20),
                 minimumSize: Size(80, 20),
               ),
               child: Text("Save"),
