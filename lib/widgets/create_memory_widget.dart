@@ -5,10 +5,42 @@ class CreateMemoryWidget extends StatelessWidget {
   final TextEditingController nameController;
   final TextEditingController descController;
 
-  const CreateMemoryWidget({super.key, required this.savePressed, required this.nameController, required this.descController});
+  const CreateMemoryWidget({
+    super.key,
+    required this.savePressed,
+    required this.nameController,
+    required this.descController,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final _inputDecoration = InputDecoration(
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: Theme.of(context).colorScheme.primary),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: Theme.of(context).colorScheme.primary),
+      ),
+      floatingLabelBehavior: FloatingLabelBehavior.always,
+      floatingLabelStyle: TextStyle(fontSize: 18),
+    );
+
+    Text _labelText(String text) {
+      return Text(
+        text,
+        style: TextStyle(color: Theme.of(context).colorScheme.primary),
+      );
+    }
+
+    Text _hintText(String text) {
+      return Text(
+        text,
+        style: TextStyle(
+          color: Theme.of(context).colorScheme.primary.withAlpha(155),
+        ),
+      );
+    }
+
     return Dialog(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -31,31 +63,9 @@ class CreateMemoryWidget extends StatelessWidget {
             child: TextField(
               controller: nameController,
               style: TextStyle(color: Theme.of(context).colorScheme.primary),
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                ),
-                floatingLabelBehavior: FloatingLabelBehavior.always,
-                floatingLabelStyle: TextStyle(fontSize: 18),
-                label: Text(
-                  "Memory Name",
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                ),
-                hint: Text(
-                  "Serviced the car",
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.primary.withAlpha(155),
-                  ),
-                ),
+              decoration: _inputDecoration.copyWith(
+                label: _labelText('Memory Name'),
+                hint: _hintText('Serviced the car'),
               ),
             ),
           ),
@@ -66,32 +76,9 @@ class CreateMemoryWidget extends StatelessWidget {
               maxLines: 4,
               controller: descController,
               style: TextStyle(color: Theme.of(context).colorScheme.primary),
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                ),
-                alignLabelWithHint: true,
-                floatingLabelBehavior: FloatingLabelBehavior.always,
-                floatingLabelStyle: TextStyle(fontSize: 18),
-                label: Text(
-                  "Memory Notes",
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                ),
-                hint: Text(
-                  "Oil change and air filter replaced.",
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.primary.withAlpha(155),
-                  ),
-                ),
+              decoration: _inputDecoration.copyWith(
+                label: _labelText('Memory Notes'),
+                hint: _hintText('Oil change and air filter replaced.'),
               ),
             ),
           ),
