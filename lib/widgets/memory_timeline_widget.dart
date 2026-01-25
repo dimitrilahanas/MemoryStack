@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:memorystack/models/memory.dart';
 import 'package:memorystack/services/database_service.dart';
-import 'package:memorystack/widgets/thing_tile.dart';
+import 'package:memorystack/widgets/memory_tile.dart';
 
-class ThingsTimelineWidget extends StatelessWidget {
-  const ThingsTimelineWidget({super.key});
+class MemoryTimelineWidget extends StatelessWidget {
+  const MemoryTimelineWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class ThingsTimelineWidget extends StatelessWidget {
                   itemCount: memories.length,
                   itemBuilder:(context, index) {
                     Memory memory = snapshot.data![index];
-                    return ThingTile(
+                    return MemoryTile(
                       isFirstTile: index == 0, isLastTile: index == memories.length - 1, memory: memory,);
                   },
                 );

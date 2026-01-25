@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:memorystack/models/memory.dart';
 
-class ThingCard extends StatelessWidget {
+class MemoryCard extends StatelessWidget {
   final Memory memory;
-  const ThingCard({super.key, required this.memory});
+  const MemoryCard({super.key, required this.memory});
 
   @override
   Widget build(BuildContext context) {

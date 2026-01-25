@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:memorystack/services/database_service.dart';
 import 'package:memorystack/widgets/create_memory_widget.dart';
 import 'package:memorystack/widgets/header_widget.dart';
-import 'package:memorystack/widgets/things_timeline_widget.dart';
+import 'package:memorystack/widgets/memory_timeline_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -66,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           HeaderWidget(),
 
-          ThingsTimelineWidget(key: timelineKey),
+          MemoryTimelineWidget(key: timelineKey),
         ],
       ),
 
