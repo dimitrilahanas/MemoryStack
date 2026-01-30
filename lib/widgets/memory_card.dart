@@ -19,13 +19,13 @@ class MemoryCard extends StatelessWidget {
             children: [
               SlidableAction(
                 onPressed: (context) {},
-                icon: Icons.delete,
+                icon: Icons.edit,
                 backgroundColor: Theme.of(context).colorScheme.secondary,
               ),
 
               SlidableAction(
                 onPressed: (context) {},
-                icon: Icons.edit,
+                icon: Icons.delete,
                 backgroundColor: Theme.of(context).colorScheme.secondary,
               ),
             ],
