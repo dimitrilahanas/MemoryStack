@@ -4,7 +4,8 @@ import 'package:memorystack/services/database_service.dart';
 import 'package:memorystack/widgets/memory_tile.dart';
 
 class MemoryTimelineWidget extends StatelessWidget {
-  const MemoryTimelineWidget({super.key});
+  final VoidCallback onRefresh;
+  const MemoryTimelineWidget({super.key, required this.onRefresh,});
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +42,7 @@ class MemoryTimelineWidget extends StatelessWidget {
                   itemBuilder:(context, index) {
                     Memory memory = snapshot.data![index];
                     return MemoryTile(
-                      isFirstTile: index == 0, isLastTile: index == memories.length - 1, memory: memory,);
+                      isFirstTile: index == 0, isLastTile: index == memories.length - 1, memory: memory, onDelete: onRefresh,);
                   },
                 );
               },

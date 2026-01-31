@@ -28,7 +28,7 @@ class DatabaseService {
       onCreate: (db, version) {
         db.execute('''
         CREATE TABLE $_memoryTableName (
-          $_memoryIdColumnName INTEGER PRIMARY KEY,
+          $_memoryIdColumnName INTEGER PRIMARY KEY AUTOINCREMENT,
           $_memoryNameColumnName TEXT NOT NULL,
           $_memoryDescColumnName TEXT NOT NULL
         )
@@ -58,6 +58,15 @@ class DatabaseService {
           ),
         )
         .toList();
-        return memories;
+    return memories;
+  }
+
+  void deleteMemory(int id) async {
+    final db = await database;
+    await db.delete(
+      _memoryTableName,
+      where: '$_memoryIdColumnName = ?',
+      whereArgs: [id],
+    );
   }
 }

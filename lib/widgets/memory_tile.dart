@@ -7,8 +7,9 @@ class MemoryTile extends StatelessWidget {
   final bool isFirstTile;
   final bool isLastTile;
   final Memory memory;
+  final VoidCallback onDelete;
 
-  const MemoryTile({super.key, required this.isFirstTile, required this.isLastTile, required this.memory});
+  const MemoryTile({super.key, required this.isFirstTile, required this.isLastTile, required this.memory, required this.onDelete});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class MemoryTile extends StatelessWidget {
           color: Theme.of(context).colorScheme.error,
         ),
         
-        endChild: MemoryCard(memory: memory),
+        endChild: MemoryCard(memory: memory, onDelete: onDelete,),
         ),
     );
   }

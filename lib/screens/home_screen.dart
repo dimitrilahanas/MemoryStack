@@ -66,7 +66,14 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           HeaderWidget(),
 
-          MemoryTimelineWidget(key: timelineKey),
+          MemoryTimelineWidget(
+            key: timelineKey,
+            onRefresh: () {
+              setState(() {
+                timelineKey = UniqueKey();
+              });
+            },
+          ),
         ],
       ),
 

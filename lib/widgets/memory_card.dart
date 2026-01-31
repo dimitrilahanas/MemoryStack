@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:memorystack/models/memory.dart';
+import 'package:memorystack/services/database_service.dart';
 
 class MemoryCard extends StatelessWidget {
   final Memory memory;
-  const MemoryCard({super.key, required this.memory});
+  final VoidCallback onDelete;
+  const MemoryCard({super.key, required this.memory, required this.onDelete});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,10 @@ class MemoryCard extends StatelessWidget {
               ),
 
               SlidableAction(
-                onPressed: (context) {},
+                onPressed: (context) async {
+                  DatabaseService.instance.deleteMemory(memory.id);
+                  onDelete();
+                },
                 icon: Icons.delete,
                 backgroundColor: Theme.of(context).colorScheme.secondary,
               ),
