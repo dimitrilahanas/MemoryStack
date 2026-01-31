@@ -61,9 +61,9 @@ This project is currently paused and will be revisited in the future.
 ---
 
 ## Screenshots
-
+<p align="center">
 <img src="1.png" alt="Main Page" width="250"/>
 <img src="2.png" alt="Main Page" width="250"/>
 <img src="3.png" alt="Creation Page" width="250"/>
 <img src="4.png" alt="Creation Page" width="250"/>
-
+</p>
